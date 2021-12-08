@@ -4,6 +4,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .serializers import ProductSerializer
 from .models import Product
+from rest_framework.views import APIView
 
 class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all().order_by('id') # tell django how to retrieve all objects from the DB, order by id ascending
